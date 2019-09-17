@@ -1,5 +1,4 @@
-#format table ## [Custom WaveView] saved 12:06:43 Mon Sep 16 2019
-TIME /M0/D Vd 
+TIME Id Vd 
  0.000E+00 -3.456E-05  3.456E-07 
  1.000E-11 -3.455E-05  3.459E-04 
  2.000E-11 -3.455E-05  6.914E-04 

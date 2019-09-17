@@ -1,5 +1,4 @@
-#format table ## [Custom WaveView] saved 12:16:42 Mon Sep 16 2019
-TIME Vds Vgs /M0/D 
+TIME Vds Vgs Id 
  0.000E+00  1.800E+00  0.000E+00  5.469E-12 
  1.000E-09  1.800E+00  0.000E+00  5.469E-12 
  2.000E-09  1.800E+00  0.000E+00  5.469E-12 
