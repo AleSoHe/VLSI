@@ -19,26 +19,38 @@ class system():
 		plt.show()
 
 class measure():
-	def __init__(self, name, system):
+	def __init__(self, name, label, scale, _system):
 		self.name = name
-		self.system = system
+		self.label = label
+		self.scale = scale
+		self.system = _system
 		self.data = []
-		self.time = []
-
+		self.time = None
+		
 	def plot_measure(self):
-		plt.plot(self.time,self.data)
+		plt.plot(np.array(self.time.data)*self.time.scale, np.array(self.data)*self.scale)
+		plt.xlabel(self.time.label)
+		plt.ylabel(self.label)
+		g1 = plt.grid(b=True, which='major', color='k', linestyle='-', linewidth=0.2)
+		#g2 = plt.grid(b=True, which='minor', color='k', linestyle='-', linewidth=0.05)
+		plt.minorticks_on()		
+		
+	
+	def subplot_measures(measure_list):
+		for i,_measure in enumerate(measure_list):
+			print(i+1)
+			plt.subplot(len(measure_list), 1, i+1)			
+			_measure.plot_measure()
+		plt.suptitle(measure_list[0].system)
 		plt.show()
-		
-	def subplot_measure(self):
-		plt.plot(self.time, self.data)
-		
+			
 # System 
 system_name = 'NMOS_Rstep'		
 
 # Measures
-time = measure('Time', system_name)
-Idrain = measure('Id', system_name)
-Vdrain = measure('Vdrain', system_name)
+time = measure('Time', 'time [ns]', 1000000000, system_name)
+Idrain = measure('Drain current', 'Id [uA]', 1000000, system_name)
+Vdrain = measure('Drain Voltage', 'Vd [V]', 1, system_name)
 
 # Read file
 with open(filename, 'r') as f:
@@ -52,15 +64,12 @@ with open(filename, 'r') as f:
 	f.close()
 	
 # Assign time vectors
-Idrain.time = time.data
-Vdrain.time = time.data
+Idrain.time = time
+Vdrain.time = time
 del time
 
-#Idrain.plot_measure()
-#Vdrain.plot_measure()
+# PLOT DATA
+Idrain.plot_measure()
+Vdrain.plot_measure()
 
-Rstep_nmos = system('Rstep', filename)
-Rstep_nmos.add_measure(Idrain)
-Rstep_nmos.add_measure(Vdrain)
-
-Rstep_nmos.subplot_measures()
+measure.subplot_measures([Idrain,Vdrain])
