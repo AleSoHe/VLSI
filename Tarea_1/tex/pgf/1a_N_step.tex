@@ -1,0 +1,33 @@
+\documentclass[border=1]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5}
+\begin{document}
+\begin{tikzpicture}
+
+    \begin{axis}[   legend style={nodes={scale=0.8, transform shape}},
+                    legend pos=north west,
+                    width=11cm,
+                    height=7cm,
+                    axis lines=middle,
+                    scaled ticks=false,
+                    x label style={at={(current axis.right of origin)},anchor=south},
+                    y label style={at={(current axis.above origin)},rotate=0,anchor=north west},
+                    xlabel={$V_{ds} [V]$}, ylabel={$I_{ds}[\mu A]$},
+                    ticklabel style = {font=\small}
+                    ]
+        \addlegendimage{empty legend}
+            \addlegendentry{\hspace{-.6cm}$V_{gs}[V]$}
+        % --- VGS = 1.8
+        \addplot [no marks, red] table [x=Vds, y=Id_uA]{../../data/parte_1/rstep_N18};
+            \addlegendentry{$1.8$}
+        % --- VGS = 0.9
+        \addplot [no marks, blue] table [x=Vds, y=Id_uA]{../../data/parte_1/rstep_N09};
+            \addlegendentry{$0.9$}
+
+        \addplot [no marks, red] table [x=Vds, y=Id_uA]{../../data/parte_1/rstep_P18};
+        	%\addlegendentry{$1.8$}
+        \addplot [no marks, blue] table [x=Vds, y=Id_uA]{../../data/parte_1/rstep_P09};
+            %\addlegendentry{PMOS $V_{gs} = 0.9$}
+     \end{axis}
+\end{tikzpicture}
+\end{document}

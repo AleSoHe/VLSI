@@ -1,0 +1,39 @@
+\section{Input capacitance}
+
+% --- Formulas
+$$ C_{gs} = W_{dib} L_{dib} C_{OX} +`W_{dib}C_{OV}$$
+%
+$$ C_{gd} = W_{eff}C_{OV} $$
+
+\iffalse
+$$ W_{eff_N} = 0.17 ~\mu m$$
+$$ W_{dib_N} = 0.22 $$
+$$ L_{dib_N} = 0.18 $$
+$$ C_{OX_N} = 8.46 ~fF/\mu m^2 $$
+$$ C_{OV_N} = 0.33 ~fF/\mu m $$
+
+$$ W_{eff_P} = 0.25 ~\mu m$$
+$$ W_{dib_P} = 0.18 $$
+$$ L_{dib_P} = 0.22 $$
+$$ C_{OX_P} = 8.91 ~fF/\mu m^2 $$
+$$ C_{OV_P} = 0.32 ~fF/\mu m $$
+\fi
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{ccc}
+		\hline
+								&	NMOS	&	PMOS \\
+		\hline
+		$W_{eff}~[\mu m]$		&	0.17	&	0.25 \\
+		$W_{dib}~[\mu m]$		&	0.22	&	0.18 \\
+		$L_{dib}~[\mu m]$		&	0.18	&	0.22 \\
+		$C_{OX}~[fF/\mu m^2]$		&	8.46	&	8.91 \\
+		$C_{OV}~[fF/\mu m]$		&	0.33	&	0.32 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+$$ C_{N_{in}} = C_{gs_N} + C_{gd_N} = 0.480 fF $$
+$$ C_{P_{in}} = C_{gs_P} + C_{gd_P} = 0.493 fF $$
+
