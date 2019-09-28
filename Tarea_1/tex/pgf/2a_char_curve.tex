@@ -2,6 +2,7 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.5}
 \definecolor{skyblue1}{rgb}{0.447,0.624,0.812}
+\definecolor{skygreen1}{rgb}{0.624,0.447,0.812}
 \begin{document}
 \begin{tikzpicture}
     \begin{axis}[   legend pos=north east,
@@ -17,26 +18,44 @@
                     ]
     	\addlegendimage{empty legend}
     		\addlegendentry{\hspace{-.6cm}P/N}
-        \addplot [no marks, red] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P220n};
+        \addplot [no marks, red] table [x=/vin1, y=/vout1]{../../data/parte_2/raw/char_curves};
         	\addlegendentry{1}
-        \addplot [no marks, black] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P330n};
-        	\addlegendentry{1.5}
-        \addplot [no marks, yellow] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P440n};
+        \addplot [no marks, black] table [x=/vin2, y=/vout2]{../../data/parte_2/raw/char_curves};
         	\addlegendentry{2}
-        \addplot [no marks, blue] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P550n};
-       	 	\addlegendentry{2.5}
-        \addplot [no marks, purple] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P660n};
+        \addplot [no marks, blue] table [x=/vin3, y=/vout3]{../../data/parte_2/raw/char_curves};
         	\addlegendentry{3}
-        \addplot [no marks, orange] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P855n};
+        \addplot [no marks, purple] table [x=/vin4, y=/vout4]{../../data/parte_2/raw/char_curves};
         	\addlegendentry{4}
-        \addplot [no marks, gray] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P1100n};
+        \addplot [no marks, orange] table [x=/vin5, y=/vout5]{../../data/parte_2/raw/char_curves};
         	\addlegendentry{5}
-        \addplot [no marks, green] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P1320n};
+        \addplot [no marks, gray] table [x=/vin6, y=/vout6]{../../data/parte_2/raw/char_curves};
         	\addlegendentry{6}
-        \addplot [no marks, brown] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P1540n};
-        	\addlegendentry{7}
-        \addplot [no marks, color=skyblue1] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P1760n};
+        \addplot [no marks, green] table [x=/vin7, y=/vout7]{../../data/parte_2/raw/char_curves};
+        	\addlegendentry{7}  
+        \addplot [no marks, brown] table [x=/vin8, y=/vout8]{../../data/parte_2/raw/char_curves};
         	\addlegendentry{8}
+        \addplot [no marks, skyblue1] table [x=/vin9, y=/vout9]{../../data/parte_2/raw/char_curves};
+        	\addlegendentry{9}
+        \addplot [no marks, violet] table [x=/vin10, y=/vout10]{../../data/parte_2/raw/char_curves};
+        	\addlegendentry{10}      
+        %\addplot [no marks, black] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P330n};
+        %	\addlegendentry{1.5}
+        %\addplot [no marks, yellow] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P440n};
+        %	\addlegendentry{2}
+        %\addplot [no marks, blue] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P550n};
+       	% 	\addlegendentry{2.5}
+        %\addplot [no marks, purple] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P660n};
+        %	\addlegendentry{3}
+        %\addplot [no marks, orange] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P855n};
+        %	\addlegendentry{4}
+        %\addplot [no marks, gray] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P1100n};
+        %	\addlegendentry{5}
+        %\addplot [no marks, green] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P1320n};
+        %	\addlegendentry{6}
+        %\addplot [no marks, brown] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P1540n};
+        %	\addlegendentry{7}
+        %\addplot [no marks, color=skyblue1] table [x=Vin, y=Vout]{../../data/parte_2/raw/2a_P1760n};
+        %	\addlegendentry{8}
      \end{axis}
 \end{tikzpicture}
 \end{document}
