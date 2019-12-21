@@ -1,0 +1,29 @@
+\documentclass[border=1]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5}
+\definecolor{skyblue1}{rgb}{0.447,0.624,0.812}
+\definecolor{skygreen1}{rgb}{0.624,0.447,0.812}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[   legend pos=north east,
+                    width=14cm,
+                    height=8cm,
+                    axis lines=middle,
+                    enlarge x limits=0.05,
+                    enlarge y limits=0.05,
+                    %scaled ticks=false,
+                    x label style={at={(current axis.right of origin)},anchor=south},
+                    y label style={at={(current axis.above origin)},rotate=0,anchor=north east},
+                    xlabel={$V_{in}[V]$}, ylabel={$V_{out}[V]$}
+                    ]
+    	%\addlegendimage{empty legend}
+    	%	\addlegendentry{\hspace{-.6cm}P/N}
+        %\addplot [no marks, red] table [x=escala, y=tpdr]{../../data/sweep/tabla};
+        %	\addlegendentry{$t_{pdr}$}
+        \addplot [no marks, blue] table [x=escala, y=tpdf]{../../data/sweep/tabla};
+            \addlegendentry{$t_{pdf}$}
+        \addplot [no marks, black] table [x=escala, y=tpd]{../../data/sweep/tabla};
+            \addlegendentry{$t_{pd}$}
+     \end{axis}
+\end{tikzpicture}
+\end{document}
